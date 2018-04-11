@@ -2,7 +2,7 @@
 
 import os
 
-# this function is from Chai
+# This function is from Chai
 # https://github.com/ccp137/DynamicViz/blob/master/utility.py
 def read_gmt_boundary(filename):
     '''
