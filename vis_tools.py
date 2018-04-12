@@ -1,7 +1,7 @@
 # MODULE containing foundational tools for ashfall forecast visualization
 
-import os # for running GMT commands
-import xarray as xr # for reading netCDF files
+import os  # for running GMT commands
+import xarray as xr  # for reading netCDF files
 
 # This function is from Chai
 # https://github.com/ccp137/DynamicViz/blob/master/utility.py
@@ -75,9 +75,9 @@ def read_HYSPLIT_netCDF(filename):
     
     '''
     # taken from https://volcano.si.edu/search_volcano.cfm
-    src_locs = {'auckland_field':[-36.9, 174.87],\
-                'mayor_island':[-37.28, 176.25],\
-                'white_island':[-37.52, 177.18],\
+    src_locs = {'auckland':[-36.9, 174.87],\
+                'mayor':[-37.28, 176.25],\
+                'white':[-37.52, 177.18],\
                 'haroharo':[-38.12, 176.5],\
                 'tarawera':[-38.12, 176.5],\
                 'taupo':[-38.82, 176],\
