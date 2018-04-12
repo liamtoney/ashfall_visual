@@ -1,6 +1,7 @@
 # MODULE containing foundational tools for ashfall forecast visualization
 
-import os
+import os # for running GMT commands
+import xarray as xr # for reading netCDF files
 
 # This function is from Chai
 # https://github.com/ccp137/DynamicViz/blob/master/utility.py
@@ -33,10 +34,10 @@ def read_gmt_boundary(filename):
     lat_list.append(temp_lat)
     return lat_list, lon_list
 
-def grab_gmt_boundaries(latmin, latmax, lonmin, lonmax, res):
+def grab_GMT_features(latmin, latmax, lonmin, lonmax, res):
     '''
-    Grab geographical boundary data from GMT for a specified extent and resolution
-    Requires the os module to be imported
+    Grab geographical feature data from GMT for a specified extent and resolution
+    Requires the os module
     Also requires GMT to be installed, obviously...
     
     Input:
@@ -44,7 +45,7 @@ def grab_gmt_boundaries(latmin, latmax, lonmin, lonmax, res):
         res (a string) can be either f, h, i, l, or c depending upon desired resolution
     
     Output:
-        boundary_data is a dictionary containing coordinates of geo features (each feature is a list)
+        feature_data is a dictionary containing coordinates of geo features (each feature is a list)
     
     '''
     # the projection (-J) info shouldn't make a difference here
@@ -52,13 +53,42 @@ def grab_gmt_boundaries(latmin, latmax, lonmin, lonmax, res):
                                                                                                latmin, latmax, res)
     os.system(cmd)
     
-    boundary_data = {}
-    # this function is from Chai
-    # https://github.com/ccp137/DynamicViz/blob/master/utility.py
-    boundary_data['latitude'], boundary_data['longitude'] = read_gmt_boundary('temp.xy')
+    feature_data = {}
+    feature_data['latitude'], feature_data['longitude'] = read_gmt_boundary('temp.xy')
     
     # clean up
     os.system('rm gmt.history')
     os.system('rm temp.xy')
     
-    return boundary_data
+    return feature_data
+
+def read_HYSPLIT_netCDF(filename):
+    '''
+    Read a netCDF file and add in volcano location info
+    Requires the xarray package
+    
+    Input:
+        filename is the filename and path for the netCDF file
+    
+    Output:
+        model is an xarray.Dataset with all the netCDF info 
+    
+    '''
+    # taken from https://volcano.si.edu/search_volcano.cfm
+    src_locs = {'auckland_field':[-36.9, 174.87],\
+                'mayor_island':[-37.28, 176.25],\
+                'white_island':[-37.52, 177.18],\
+                'haroharo':[-38.12, 176.5],\
+                'tarawera':[-38.12, 176.5],\
+                'taupo':[-38.82, 176],\
+                'tongariro':[-39.157, 175.632],\
+                'ngauruhoe':[-39.157, 175.632],\
+                'ruapehu':[-39.28, 175.57],\
+                'taranaki':[-39.3, 174.07]}
+    volc_name = filename.split("_")[1]
+    
+    # open model and add in source location info
+    model = xr.open_dataset(filename)
+    model.attrs['volcano_location'] = src_locs[volc_name]
+
+    return model
