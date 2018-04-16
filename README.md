@@ -1,2 +1,2 @@
-# ashfall_vis
+# ashfall_visual
 GNS Science work
