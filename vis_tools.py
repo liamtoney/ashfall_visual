@@ -74,18 +74,29 @@ def read_HYSPLIT_netCDF(filename):
         model is an xarray.Dataset with all the netCDF info 
     
     '''
-    # taken from https://volcano.si.edu/search_volcano.cfm
-    src_locs = {'auckland':[-36.9, 174.87],\
-                'mayor':[-37.28, 176.25],\
-                'white':[-37.52, 177.18],\
-                'haroharo':[-38.12, 176.5],\
-                'tarawera':[-38.12, 176.5],\
-                'taupo':[-38.82, 176],\
-                'tongariro':[-39.157, 175.632],\
-                'ngauruhoe':[-39.157, 175.632],\
-                'ruapehu':[-39.28, 175.57],\
-                'taranaki':[-39.3, 174.07]}
-    volc_name = filename.split("_")[1]
+#     # taken from https://volcano.si.edu/search_volcano.cfm
+#     src_locs = {'auckland':[-36.9, 174.87],\
+#                 'mayor':[-37.28, 176.25],\
+#                 'white':[-37.52, 177.18],\
+#                 'haroharo':[-38.12, 176.5],\
+#                 'tarawera':[-38.12, 176.5],\
+#                 'taupo':[-38.82, 176],\
+#                 'tongariro':[-39.157, 175.632],\
+#                 'ngauruhoe':[-39.157, 175.632],\
+#                 'ruapehu':[-39.28, 175.57],\
+#                 'taranaki':[-39.3, 174.07]}
+    # taken from ASHFALL model output files (converted from NZMG to WGS84)
+    src_locs = {'auckland':[-36.8882, 174.7352],\
+                'mayor':[-37.2852, 176.2562],\
+                'white':[-37.5192, 177.1832],\
+                'haroharo':[-38.1452, 176.4662],\
+                'tarawera':[-38.2252, 176.5062],\
+                'taupo':[-38.8072, 175.9782],\
+                'tongariro':[-39.1062, 175.6732],\
+                'ngauruhoe':[-39.1552, 175.6322],\
+                'ruapehu':[-39.2816, 175.5639],\
+                'taranaki':[-39.2952, 174.0642]}
+    volc_name = filename.split('_')[1]
     
     # open model and add in source location info
     model = xr.open_dataset(filename)
