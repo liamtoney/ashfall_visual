@@ -34,7 +34,7 @@ def read_gmt_boundary(filename):
     lat_list.append(temp_lat)
     return lat_list, lon_list
 
-def grab_GMT_features(latmin, latmax, lonmin, lonmax, res):
+def grab_gmt_features(latmin, latmax, lonmin, lonmax, res):
     '''
     Grab geographical feature data from GMT for a specified extent and resolution
     Requires the os module
@@ -62,7 +62,7 @@ def grab_GMT_features(latmin, latmax, lonmin, lonmax, res):
     
     return feature_data
 
-def read_HYSPLIT_netCDF(filename):
+def read_hysplit_netcdf(filename):
     '''
     Read a netCDF file and add in volcano location info
     Requires the xarray package
