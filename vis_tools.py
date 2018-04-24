@@ -2,6 +2,7 @@
 
 import os  # for running GMT commands
 import xarray as xr  # for reading netCDF files
+import numpy as np
 
 # This function is from Chai
 # https://github.com/ccp137/DynamicViz/blob/master/utility.py
@@ -64,7 +65,7 @@ def grab_gmt_features(latmin, latmax, lonmin, lonmax, res):
 
 def read_hysplit_netcdf(filename):
     '''
-    Read a netCDF file and add in volcano location info
+    Read a netCDF file, add in volcano location info, and add an "empty grid" time step at t=0
     Requires the xarray package
     
     Input:
@@ -101,5 +102,14 @@ def read_hysplit_netcdf(filename):
     # open model and add in source location info
     model = xr.open_dataset(filename)
     model.attrs['volcano_location'] = src_locs[volc_name]
+    
+    # create an empty grid at t=0
+    empty = model.isel(time=0)
+    empty['total_deposition'].values.fill(0)
+    empty['time'] = np.datetime64(model.attrs['eruption_time'])
+
+    # insert the grid into the model at t=0
+    model = xr.concat((empty, model), dim='time')
+    model = model.transpose('time', 'lat', 'lon')
 
     return model
