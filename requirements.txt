@@ -1,6 +1,0 @@
-bokeh==0.12.15
-Cartopy==0.16.0
-colorcet==1.0.0
-matplotlib==2.2.2
-numpy==1.14.2
-xarray==0.10.3
