@@ -1,3 +1,9 @@
+name: ashfall_visual
+
 dependencies:
-  - pip:
-    - Cython
+	- numpy
+  - matplotlib
+  - colorcet
+  - xarray
+  - cartopy
+  - bokeh
