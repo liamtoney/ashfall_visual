@@ -1,5 +1,0 @@
-numpy==1.14.2
-matplotlib==2.2.2
-colorcet==0.9.1
-xarray==0.10.3
-cartopy==0.13.0
