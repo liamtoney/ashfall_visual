@@ -1,0 +1,10 @@
+﻿name: ashfall_visual
+dependencies:
+  - bokeh
+  - cartopy
+  - colorcet
+  - holoviews
+  - geoviews
+  - matplotlib
+  - numpy
+  - xarray
