@@ -1,7 +1,7 @@
 name: ashfall_visual
 
 dependencies:
-	- numpy
+  - numpy
   - matplotlib
   - colorcet
   - xarray
