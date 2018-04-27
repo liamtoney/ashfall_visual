@@ -1,9 +1,0 @@
-name: ashfall_visual
-
-dependencies:
-  - numpy
-  - matplotlib
-  - colorcet
-  - xarray
-  - cartopy
-  - bokeh
