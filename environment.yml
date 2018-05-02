@@ -187,7 +187,7 @@ dependencies:
 - python-oauth2=1.0.1=py36_0
 - pytz=2018.3=py_0
 - pyyaml=3.12=py36_1
-- pyzmq=16.0.2=py36_2
+#  - pyzmq=16.0.2=py36_2  <-- this package causes a ResolvePackageNotFound error
 - qt=5.6.2=7
 - qtconsole=4.3.1=py36_0
 - readline=7.0=0
