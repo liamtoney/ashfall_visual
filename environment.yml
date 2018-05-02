@@ -251,7 +251,7 @@ dependencies:
 - pip:
   - backports.functools-lru-cache==1.5
   #  - clemb==0.0.1  <-- this package causes a CondaValueError
-  - gmt-python==0+unknown
+  #  - gmt-python==0+unknown  <-- this package causes a CondaValueError
   - ipython-genutils==0.2.0
   - jupyter-client==5.1.0
   - jupyter-cms==0.7.0
