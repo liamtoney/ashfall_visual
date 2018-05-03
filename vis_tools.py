@@ -3,6 +3,7 @@
 import numpy as np
 import xarray as xr
 import cartopy.feature as cf
+import matplotlib.pyplot as plt
 
 def read_hysplit_netcdf(filename):   
     """Reads a HYSPLIT netCDF file.
@@ -58,12 +59,15 @@ def grab_gshhg_features(scale, levels, extent):
     for plotting backends (like Bokeh) that don't have fancy geo feature integration.
     
     Args:
-        scale: A string, can be either f(ull), h(igh), i(ntermediate), l(ow), or c(rap) depending upon desired resolution.
-        levels: Specify which level(s) of feature to plot; [1] is only coastlines and [1, 2, 3, 4] is everything.
+        scale: A string, can be either f(ull), h(igh), i(ntermediate), l(ow), or c(rap)
+               depending upon desired resolution.
+        levels: Specify which level(s) of feature to plot; [1] is only coastlines
+                and [1, 2, 3, 4] is everything.
         extent: Specify [lonmin, lonmax, latmin, latmax] in decimal degrees.
     
     Returns:
-        features: A dictionary containing coordinates of geo features (WGS84 lat/lon, decimal degrees).
+        features: A dictionary containing coordinates of geo features
+                  (WGS84 lat/lon, decimal degrees).
     """
     
     unformatted_features = list(cf.GSHHSFeature(scale=scale, levels=levels).intersecting_geometries(extent))
@@ -76,3 +80,33 @@ def grab_gshhg_features(scale, levels, extent):
         features['latitude'].append(lats)
     
     return features
+
+def grab_contour_info(X, Y, Z, V):
+    """Extracts vertices of contour lines created by matplotlib's contour function.
+    
+    Modified from:
+    <https://stackoverflow.com/questions/33533047/how-to-make-a-contour-plot-in-python-using-bokeh-or-other-libs>
+    
+    Args:
+        Identical to those specified here:
+        <https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contour.html>
+    
+    Returns:
+        x_all, y_all: Lists of lists of vertices for the x and y coordinates. Sublists
+                      correspond to individual paths.
+    """
+    
+    contour_info = plt.contour(X, Y, Z, V)
+    plt.close()
+    
+    x_all = []
+    y_all = []
+    for iso_level in contour_info.collections:
+        for path in iso_level.get_paths():
+            vertices = path.vertices
+            x = vertices[:, 0]
+            y = vertices[:, 1]
+            x_all.append(x.tolist())
+            y_all.append(y.tolist())
+            
+    return x_all, y_all
