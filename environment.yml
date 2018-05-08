@@ -1,6 +1,7 @@
 name: bokeh-dev
 channels:
 - bokeh/channel/dev
+- pyviz/label/dev
 - conda-forge/label/dev
 - conda-forge
 - defaults
@@ -10,6 +11,7 @@ dependencies:
 - altair=1.2.1=py_0
 - asn1crypto=0.22.0=py36_0
 - attrs=17.4.0=py_0
+- backcall=0.1.0=py_0
 - backports=1.0=py36_1
 - backports.functools_lru_cache=1.5=py36_0
 - beautifulsoup4=4.5.3=py36_0
@@ -51,6 +53,8 @@ dependencies:
 - freexl=1.0.5=0
 - future=0.16.0=py36_0
 - gdal=2.2.4=py36_0
+- geographiclib=1.49=py_0
+- geopy=1.13.0=py_1
 - geos=3.6.2=1
 - geotiff=1.4.2=1
 - geoviews=1.4.3=py_0
@@ -74,7 +78,7 @@ dependencies:
 - ipykernel=4.7.0=py36_0
 - ipyleaflet=0.5.5=py36_0
 - ipyparallel=6.1.1=py36_1
-- ipython=6.2.1=py36_0
+- ipython=6.3.1=py36_0
 - ipython_genutils=0.2.0=py36_0
 - ipywidgets=7.0.5=py36_0
 - jedi=0.10.2=py36_0
@@ -248,6 +252,7 @@ dependencies:
 - numba=0.36.2=np114py36hc6662d5_0
 - numexpr=2.6.4=py36_nomklh2c28f9d_0
 - util-linux=2.21=0
+- parambokeh=0.2.2=py_0
 - pip:
   - backports.functools-lru-cache==1.5
   #  - clemb==0.0.1  <-- this package causes a CondaValueError
