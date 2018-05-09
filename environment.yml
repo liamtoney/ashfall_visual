@@ -1,11 +1,13 @@
 name: ashfall_visual
 channels:
   - bokeh/channel/dev
+  - conda-forge
   - defaults
 dependencies:
   - bokeh=0.12.16dev2
   - cartopy=0.15.*
   - colorcet=1.0.*
+  - gdal=2.2.*
   - geopy=1.13.*
   - geoviews=1.4.*
   - holoviews=1.9.*
@@ -13,7 +15,8 @@ dependencies:
   - netcdf4=1.3.*
   - numpy=1.14.*
   - pyproj=1.9.*
+  - rasterio=0.36.*
   - shapely=1.6.*
   - xarray=0.10.*
   - pip:
-    - fastkml==0.11
+    - simplekml==1.2.*
