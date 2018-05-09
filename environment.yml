@@ -10,8 +10,10 @@ dependencies:
   - geoviews=1.4.*
   - holoviews=1.9.*
   - matplotlib=2.2.*
+  - netcdf4=1.3.*
   - numpy=1.14.*
   - pyproj=1.9.*
+  - shapely=1.6.*
   - xarray=0.10.*
   - pip:
     - fastkml==0.11
