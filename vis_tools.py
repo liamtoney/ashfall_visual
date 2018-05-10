@@ -5,7 +5,7 @@ import xarray as xr
 import cartopy.feature as cf
 import matplotlib.pyplot as plt
 
-def read_hysplit_netcdf(filename):   
+def read_hysplit_netcdf(filename, lower_limit=0.0):   
     """Reads a HYSPLIT netCDF file.
     
     Reads the netCDF file, crops the model, adds an "empty grid" time step at t=0,
@@ -13,6 +13,9 @@ def read_hysplit_netcdf(filename):
         
     Args:
         filename: A string specifying the path/filename for the netCDF file.
+        lower_limit: (Optional) A float specifying the value to use for cropping.
+                     Model cells with a value at or below this value will be
+                     treated as NaN. Default is 0.0 (include everything).
     
     Returns:
         model: An xarray.Dataset containing all of the processed netCDF info.
@@ -23,12 +26,12 @@ def read_hysplit_netcdf(filename):
     model = model.isel(lon=slice(-1))  # remove all model grid points with longitude = 180.0 degrees
     
     final_deposition = model.isel(time=-1)['total_deposition'].values  # the "final" ash distribution
-    coords = np.argwhere(final_deposition > 0)
+    coords = np.argwhere(final_deposition > lower_limit)
     y_min, x_min = coords.min(axis=0)
     y_max, x_max = coords.max(axis=0)
     model = model.isel(lon=slice(x_min, x_max+1), lat=slice(y_min, y_max+1))  # crop model
     
-    np.place(model['total_deposition'].values, model['total_deposition'].values == 0, np.nan)
+    np.place(model['total_deposition'].values, model['total_deposition'].values <= lower_limit, np.nan)
     
     # add in an extra, empty time step at t=0
     model = xr.concat((model.isel(time=0), model), dim='time')
