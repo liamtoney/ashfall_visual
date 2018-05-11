@@ -5,7 +5,7 @@ import xarray as xr
 import cartopy.feature as cf
 import matplotlib.pyplot as plt
 
-def read_hysplit_netcdf(filename, lower_limit=0.0):   
+def read_hysplit_netcdf(filename, lower_limit=0.):   
     """Reads a HYSPLIT netCDF file.
     
     Reads the netCDF file, crops the model, adds an "empty grid" time step at t=0,
