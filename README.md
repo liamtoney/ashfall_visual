@@ -1,6 +1,4 @@
 # ashfall_visual
-
-## Motivation
 The spatial distribution, amount, and arrival time of deposited ash following a volcanic eruption are important parameters for hazard preparedness and mitigation. In New Zealand, [GNS Science](https://www.gns.cri.nz/) has collaborated with [MetService](http://www.metservice.com/national/home) to modify [HYSPLIT](https://ready.arl.noaa.gov/HYSPLIT.php) &mdash; an airborne ash dispersion modeling program &mdash; for ash deposition forecasting. The purpose of this repository is to illustrate the array of ashfall forecast products that can be produced from the model output.
 
 ## How to navigate this repository
