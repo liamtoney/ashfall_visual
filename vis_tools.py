@@ -1,11 +1,11 @@
-# various ashfall visualization utility functions
+# Module containing various ashfall visualization utility functions.
 
 import numpy as np
 import xarray as xr
 import cartopy.feature as cf
 import matplotlib.pyplot as plt
 
-def read_hysplit_netcdf(filename, lower_limit=0.):   
+def read_hysplit_netcdf(filename, lower_limit=0.0):   
     """Reads a HYSPLIT netCDF file.
     
     Reads the netCDF file, crops the model, adds an "empty grid" time step at t=0,
@@ -15,7 +15,7 @@ def read_hysplit_netcdf(filename, lower_limit=0.):
         filename: A string specifying the path/filename for the netCDF file.
         lower_limit: (Optional) A float specifying the value to use for cropping.
                      Model cells with a value at or below this value will be
-                     treated as NaN. Default is 0.0 (include everything).
+                     made NaN. Default is 0.0 (include everything).
     
     Returns:
         model: An xarray.Dataset containing all of the processed netCDF info.
@@ -63,7 +63,7 @@ def grab_gshhg_features(scale, levels, extent):
     
     Args:
         scale: A string, can be either f(ull), h(igh), i(ntermediate), l(ow), or c(rap)
-               depending upon desired resolution.
+               depending upon the desired resolution.
         levels: Specify which level(s) of feature to plot; [1] is only coastlines
                 and [1, 2, 3, 4] is everything.
         extent: Specify [lonmin, lonmax, latmin, latmax] in decimal degrees.
