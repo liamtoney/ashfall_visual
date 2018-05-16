@@ -14,7 +14,7 @@ It also provides an overview of some key Python tools for geovisualization. To r
 
 The [`experiments/`](experiments) directory contains additional Jupyter notebooks which explore the "plotting tool space."
 
-[`18042918_taupo_15.0_0.01.nc`](18042918_taupo_15.0_0.01.nc) is typical of the netCDF files output by the modified HYSPLIT program. This specific file describes the ashfall forecast for an eruption of the Taupō supervolcano on April 29th, 2018 at 18:00 NZST, with a plume height of 15 km and an erupted volume of 0.01 cubic km. The file is provided courtesy of MetService.
+[`18042918_taupo_15.0_0.01.nc`](18042918_taupo_15.0_0.01.nc) is typical of the netCDF files output by the modified HYSPLIT program. This specific file describes the ashfall forecast for an eruption of the Taupō volcano on April 29th, 2018 at 18:00 NZST, with a plume height of 15 km and an erupted volume of 0.01 cubic km. The file is provided courtesy of MetService.
 
 [`vis_tools.py`](vis_tools.py) contains several functions used within the Python code of the repository's notebooks.
 
@@ -24,6 +24,30 @@ Click on the badge below to access a fully executable, editable version of this 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/liamtoney/ashfall_visual/master)
 
 (If you see `Waiting for build to start...` at the top of the build logs, please be patient. Constructing the binder environment takes some time.)
+
+## Installation and dependencies
+See [`environment.yml`](environment.yml) for the list of dependencies.
+
+To create an environment with all the dependencies installed using the conda package manager run the following:
+
+```
+conda env create -f environment.yml
+```
+
+...then activate the environment:
+
+```
+source activate ashfall_visual
+```
+
+...and install a new ipython kernel to use with your jupyter notebook:
+
+```
+pip install kernda --no-cache
+python -m ipykernel install --name ashfall_visual
+kernda -o -y /usr/local/share/jupyter/kernels/ashfall_visual/kernel.json
+```
+Note: The path to the `kernel.json` file may differ for your system.
 
 ## References
 Chai, C., Ammon, C. J., Maceira, M., & Herrmann, R. B. (2018). Interactive visualization of complex seismic data and models using Bokeh. *Seismological Research Letters*, *89*(2A), 668–676. <https://doi.org/10.1785/0220170132>
