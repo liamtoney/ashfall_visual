@@ -7,6 +7,7 @@ dependencies:
   - bokeh=0.12.16dev2
   - cartopy=0.15.*
   - colorcet=1.0.*
+  - esmpy=7.1.*
   - fiona=1.7.*
   - gdal=2.2.*
   - geopy=1.13.*
@@ -21,3 +22,4 @@ dependencies:
   - xarray=0.10.*
   - pip:
     - simplekml==1.2.*
+    - xesmf==0.1.*
