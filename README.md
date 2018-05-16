@@ -28,7 +28,7 @@ Click on the badge below to access a fully executable, editable version of this 
 ## Installation and dependencies
 See [`environment.yml`](environment.yml) for the list of dependencies.
 
-To create an evironment with all the dependencies installed using the conda package manager run the following:
+To create an environment with all the dependencies installed using the conda package manager run the following:
 
 ```
 conda env create -f environment.yml
