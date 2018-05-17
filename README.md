@@ -1,7 +1,7 @@
 # Interactive visualization of ash deposition forecasts
 ![](demonstration.gif "Demonstration of interactive ash deposition map")
 
-The spatial distribution, amount, and arrival time of deposited ash following a volcanic eruption are important parameters for hazard preparedness and mitigation. In New Zealand, [GNS Science](https://www.gns.cri.nz/) has collaborated with [MetService](http://www.metservice.com/national/home) to modify [HYSPLIT](https://ready.arl.noaa.gov/HYSPLIT.php) &mdash; an airborne ash dispersion modeling program &mdash; for ash deposition forecasting. This repository illustrates the variety of ashfall forecast products that can be produced from the model output.
+The spatial distribution, amount, and arrival time of deposited ash following a volcanic eruption are important parameters for hazard preparation and mitigation. In New Zealand, [GNS Science](https://www.gns.cri.nz/) has collaborated with [MetService](http://www.metservice.com/national/home) to modify [HYSPLIT](https://ready.arl.noaa.gov/HYSPLIT.php) &mdash; an airborne ash dispersion modeling program &mdash; for ash deposition forecasting. This repository illustrates the variety of ashfall forecast products that can be produced from the model output.
 
 ## How to navigate this repository
 Your first stop should be [`concept_portfolio.ipynb`](concept_portfolio.ipynb). This Jupyter notebook showcases and explains the three most fundamental interactive visualization products included in this repository:
@@ -23,7 +23,7 @@ Click on the badge below to access a fully executable, editable version of this 
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/liamtoney/ashfall_visual/master)
 
-Note: If you see `Waiting for build to start...` at the top of the build logs, please be patient. Constructing the binder environment takes some time.
+(Note: If you see `Waiting for build to start...` at the top of the build logs, please be patient. Constructing the binder environment takes some time.)
 
 ## Installation and dependencies
 See [`environment.yml`](environment.yml) for a list of dependencies.
@@ -42,7 +42,7 @@ pip install kernda --no-cache
 python -m ipykernel install --name ashfall_visual
 kernda -o -y /usr/local/share/jupyter/kernels/ashfall_visual/kernel.json
 ```
-Note: The path to `kernel.json` may differ for your system.
+(Note: The path to `kernel.json` may differ for your system.)
 
 ## References
 Chai, C., Ammon, C. J., Maceira, M., & Herrmann, R. B. (2018). Interactive visualization of complex seismic data and models using Bokeh. *Seismological Research Letters*, *89*(2A), 668–676. <https://doi.org/10.1785/0220170132>
