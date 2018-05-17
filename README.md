@@ -4,11 +4,11 @@
 The spatial distribution, amount, and arrival time of deposited ash following a volcanic eruption are important parameters for hazard preparedness and mitigation. In New Zealand, [GNS Science](https://www.gns.cri.nz/) has collaborated with [MetService](http://www.metservice.com/national/home) to modify [HYSPLIT](https://ready.arl.noaa.gov/HYSPLIT.php) &mdash; an airborne ash dispersion modeling program &mdash; for ash deposition forecasting. This repository illustrates the variety of ashfall forecast products that can be produced from the model output.
 
 ## How to navigate this repository
-Your first stop should be [`concept_portfolio.ipynb`](concept_portfolio.ipynb). This Jupyter notebook showcases and explains the three most fundamental visualization products included in this repository:
+Your first stop should be [`concept_portfolio.ipynb`](concept_portfolio.ipynb). This Jupyter notebook showcases and explains the three most fundamental interactive visualization products included in this repository:
 
-* An interactive ash deposition map
-* An ash deposition time profile tool
-* A KMZ export function
+* An ash deposition map
+* An ash thickness time profile plotting tool
+* A GIS / Google Earth data export utility
 
 It also provides an overview of some key Python tools for geovisualization. To run (and edit!) cells within the notebook, you can launch an interactive version by following the badge link provided [below](#interactive-jupyter-notebooks).
 
@@ -58,6 +58,6 @@ Mastin, L. G., Randall, M. J., Schwaiger, H. F., & Denlinger, R. P. (2013). *Use
     </a>    
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="http://www.metservice.com/national/home">    
-    <img src="http://m.metservice.com/sites/all/themes/mobile/images-new/hi/MetService-hammerhead-logo.svg" height="40">
+        <img src="http://m.metservice.com/sites/all/themes/mobile/images-new/hi/MetService-hammerhead-logo.svg" height="40">
     </a>
 </p>
