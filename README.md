@@ -7,7 +7,7 @@ The spatial distribution, amount, and arrival time of deposited ash following a 
 Your first stop should be [`concept_portfolio.ipynb`](concept_portfolio.ipynb). This Jupyter notebook showcases and explains the three most fundamental visualization products included in this repository:
 
 * An interactive ash deposition map
-* A ash deposition time profile tool
+* An ash deposition time profile tool
 * A KMZ export function
 
 It also provides an overview of some key Python tools for geovisualization. To run (and edit!) cells within the notebook, you can launch an interactive version by following the badge link provided [below](#interactive-jupyter-notebooks).
@@ -50,3 +50,14 @@ Chai, C., Ammon, C. J., Maceira, M., & Herrmann, R. B. (2018). Interactive visua
 Hurst, T., & Davis, C. (2017). Forecasting volcanic ash deposition using HYSPLIT. *Journal of Applied Volcanology*, *6*(1), 1-8. <https://doi.org/10.1186/s13617-017-0056-7>
 
 Mastin, L. G., Randall, M. J., Schwaiger, H. F., & Denlinger, R. P. (2013). *User's guide and reference to Ash3d: A three-dimensional model for Eulerian atmospheric tephra transport and deposition* ([Open-File Report 2013-1122](https://pubs.usgs.gov/of/2013/1122/pdf/ofr20131122.pdf)). Reston, VA: U.S. Geological Survey.
+
+</br>
+<p align="center">
+    <a href="https://www.gns.cri.nz/">
+        <img src="http://spacewardbound.astrobiology.kiwi/wp-content/uploads/2017/04/GNS_logo-1038x1709.png" height="70">
+    </a>    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://www.metservice.com/national/home">    
+    <img src="http://m.metservice.com/sites/all/themes/mobile/images-new/hi/MetService-hammerhead-logo.svg" height="40">
+    </a>
+</p>
