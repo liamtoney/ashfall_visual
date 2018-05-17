@@ -6,8 +6,8 @@ The spatial distribution, amount, and arrival time of deposited ash following a 
 ## How to navigate this repository
 Your first stop should be [`concept_portfolio.ipynb`](concept_portfolio.ipynb). This Jupyter notebook showcases and explains the three most fundamental visualization products included in this repository:
 
-* An interactive map
-* A time profile map
+* An interactive ash deposition map
+* A ash deposition time profile tool
 * A KMZ export function
 
 It also provides an overview of some key Python tools for geovisualization. To run (and edit!) cells within the notebook, you can launch an interactive version by following the badge link provided [below](#interactive-jupyter-notebooks).
@@ -23,31 +23,26 @@ Click on the badge below to access a fully executable, editable version of this 
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/liamtoney/ashfall_visual/master)
 
-(If you see `Waiting for build to start...` at the top of the build logs, please be patient. Constructing the binder environment takes some time.)
+Note: If you see `Waiting for build to start...` at the top of the build logs, please be patient. Constructing the binder environment takes some time.
 
 ## Installation and dependencies
-See [`environment.yml`](environment.yml) for the list of dependencies.
+See [`environment.yml`](environment.yml) for a list of dependencies.
 
-To create an environment with all the dependencies installed using the conda package manager run the following:
-
+To create an environment with all of the dependencies installed (using [conda](https://conda.io/docs/)), run the following:
 ```
 conda env create -f environment.yml
 ```
-
-...then activate the environment:
-
+. . . then activate the environment:
 ```
 source activate ashfall_visual
 ```
-
-...and install a new ipython kernel to use with your Jupyter notebook:
-
+. . . and install a new IPython kernel to use with your Jupyter notebook:
 ```
 pip install kernda --no-cache
 python -m ipykernel install --name ashfall_visual
 kernda -o -y /usr/local/share/jupyter/kernels/ashfall_visual/kernel.json
 ```
-Note: The path to the `kernel.json` file may differ for your system.
+Note: The path to `kernel.json` may differ for your system.
 
 ## References
 Chai, C., Ammon, C. J., Maceira, M., & Herrmann, R. B. (2018). Interactive visualization of complex seismic data and models using Bokeh. *Seismological Research Letters*, *89*(2A), 668–676. <https://doi.org/10.1785/0220170132>
