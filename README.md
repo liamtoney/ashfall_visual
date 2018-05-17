@@ -52,12 +52,4 @@ Hurst, T., & Davis, C. (2017). Forecasting volcanic ash deposition using HYSPLIT
 Mastin, L. G., Randall, M. J., Schwaiger, H. F., & Denlinger, R. P. (2013). *User's guide and reference to Ash3d: A three-dimensional model for Eulerian atmospheric tephra transport and deposition* ([Open-File Report 2013-1122](https://pubs.usgs.gov/of/2013/1122/pdf/ofr20131122.pdf)). Reston, VA: U.S. Geological Survey.
 
 </br>
-<p align="center">
-    <a href="https://www.gns.cri.nz/">
-        <img src="http://spacewardbound.astrobiology.kiwi/wp-content/uploads/2017/04/GNS_logo-1038x1709.png" height="70">
-    </a>    
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="http://www.metservice.com/national/home">    
-        <img src="http://m.metservice.com/sites/all/themes/mobile/images-new/hi/MetService-hammerhead-logo.svg" height="40">
-    </a>
-</p>
+<p align="center"><a href="https://www.gns.cri.nz"><img src="http://spacewardbound.astrobiology.kiwi/wp-content/uploads/2017/04/GNS_logo-1038x1709.png" height="70"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.metservice.com/national/home"><img src="http://m.metservice.com/sites/all/themes/mobile/images-new/hi/MetService-hammerhead-logo.svg" height="40"></a></p>
