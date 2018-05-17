@@ -2,8 +2,11 @@
 
 import numpy as np
 import xarray as xr
-import cartopy.feature as cf
 import matplotlib.pyplot as plt
+import xesmf as xe
+import cartopy.crs as ccrs
+import cartopy.feature as cf
+import colorcet as cc
 
 def read_hysplit_netcdf(filename, lower_limit=0.0):   
     """Reads a HYSPLIT netCDF file.
@@ -113,3 +116,46 @@ def grab_contour_info(X, Y, Z, V):
             y_all.append(y.tolist())
             
     return x_all, y_all
+
+def show_regridding_effects(fname, csz, alg='bilinear'):
+    """Displays the effects of regridding a model.
+    
+    Plots a side-by-side comparison of the original model and the regridded model,
+    using a high-contrast colormap for easy identification of discrepancies.
+    
+    Args:
+        fname: Filename string, including path.
+        csz: Desired output cell size in degrees (cell square side length).
+        alg: Regridding algorithim. This function has only been tested with 'bilinear'
+             (see <http://xesmf.readthedocs.io/en/latest/Compare_algorithms.html>
+             for more info).
+    """    
+    
+    model = read_hysplit_netcdf(fname)
+    new_grid = xr.Dataset({'lat': (['lat'], np.arange(np.min(model['lat']), np.max(model['lat']), csz)),
+                           'lon': (['lon'], np.arange(np.min(model['lon']), np.max(model['lon']), csz))
+                          })
+    regridder = xe.Regridder(model, new_grid, alg)
+    td_regrid = regridder(model['total_deposition'].transpose('time', 'lat', 'lon'))
+    regridder.clean_weight_file()
+    
+    proj = ccrs.epsg(2193)
+    params = dict(vmin=-5, vmax=0, cmap=cc.m_rainbow, transform=ccrs.PlateCarree(), add_colorbar=False)
+    coast_res = '10m'
+    ts = -1
+    
+    plt.figure(figsize=(16, 6))
+    
+    ax1 = plt.subplot(121, projection=proj)
+    model['total_deposition'] = np.log10(model['total_deposition'])
+    model['total_deposition'].isel(time=ts).plot.pcolormesh(ax=ax1, **params)
+    ax1.coastlines(resolution=coast_res)
+    plt.title('original')
+
+    ax2 = plt.subplot(122, projection=proj)
+    td_regrid = np.log10(td_regrid)
+    td_regrid.isel(time=ts).plot.pcolormesh(ax=ax2, **params)
+    ax2.coastlines(resolution=coast_res)
+    plt.title('regridded')
+    
+    plt.show()
