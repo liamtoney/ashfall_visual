@@ -54,6 +54,8 @@ def read_hysplit_netcdf(filename, lower_limit=0.0):
                 'taranaki':[-39.2952, 174.0642]}
     volc_name = filename.split('/')[-1].split('_')[1]
     model.attrs['volcano_location'] = src_locs[volc_name]
+
+    model.attrs['ash_thickness_units'] = 'mm'
     
     return model
 
