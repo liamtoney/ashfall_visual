@@ -51,6 +51,8 @@ Hurst, T., & Davis, C. (2017). Forecasting volcanic ash deposition using HYSPLIT
 
 Mastin, L. G., Randall, M. J., Schwaiger, H. F., & Denlinger, R. P. (2013). *User's guide and reference to Ash3d: A three-dimensional model for Eulerian atmospheric tephra transport and deposition* ([Open-File Report 2013-1122](https://pubs.usgs.gov/of/2013/1122/pdf/ofr20131122.pdf)). Reston, VA: U.S. Geological Survey.
 
+Thompson, M. A., Lindsay, J. M., & Leonard, G. S. (2017). [More than meets the eye: Volcanic hazard map design and visual communication](https://doi.org/10.1007/11157_2016_47). In C. Fearnley et al. (Eds.), *Observing the Volcano World: Volcano Crisis Communication* (pp. 1-20). Berlin: Springer International.
+
 </br>
 <p align="center">
   <a href="https://www.gns.cri.nz">
