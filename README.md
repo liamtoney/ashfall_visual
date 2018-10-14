@@ -10,13 +10,17 @@ Your first stop should be [`concept_portfolio.ipynb`](concept_portfolio.ipynb). 
 * An ash thickness time profile plotting tool
 * A GIS / Google Earth data export utility
 
-It also provides an overview of some key Python tools for geovisualization. To run (and edit!) cells within the notebook, you can launch an interactive version by following the badge link provided [below](#interactive-jupyter-notebooks).
+It also provides an overview of some key Python tools for geovisualization. To run (and edit!) cells within the notebook, you can launch an interactive version by clicking on the badge provided in the following section.
 
 The [`experiments/`](experiments) directory contains additional Jupyter notebooks which explore the "plotting tool space."
 
 [`18042918_taupo_15.0_0.01.nc`](18042918_taupo_15.0_0.01.nc) is typical of the netCDF files output by the modified HYSPLIT program. This specific file describes the ashfall forecast for an eruption of the Taupō volcano on April 29th, 2018 at 18:00 NZST, with a plume height of 15 km and an erupted volume of 0.01 cubic km. The file is provided courtesy of MetService.
 
 [`vis_tools.py`](vis_tools.py) contains several functions used within the Python code of the repository's notebooks.
+
+You can click on the badge below to access a [nbviewer](https://nbviewer.jupyter.org/)-rendered version of this repository:
+
+[![nbviewer](https://github.com/jupyter/design/blob/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.jupyter.org/github/liamtoney/ashfall_visual/tree/master/)
 
 ## Interactive Jupyter notebooks
 Click on the badge below to access a fully executable, editable version of this repository:
