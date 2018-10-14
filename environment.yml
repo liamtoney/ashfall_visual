@@ -1,10 +1,9 @@
 name: ashfall_visual
 channels:
-  - bokeh/channel/dev
   - conda-forge
   - defaults
 dependencies:
-  - bokeh=0.12.16dev2
+  - bokeh=0.13.*
   - cartopy=0.15.*
   - colorcet=1.0.*
   - esmpy=7.1.*
