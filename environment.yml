@@ -13,7 +13,7 @@ dependencies:
   - geoviews
   - holoviews
   - matplotlib
-  - netcdf
+  - netcdf4
   - numpy
   - pyproj
   - rasterio
