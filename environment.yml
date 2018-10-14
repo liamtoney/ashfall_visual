@@ -1,5 +1,6 @@
 name: ashfall_visual
 channels:
+  - bokeh
   - conda-forge
   - defaults
 dependencies:
