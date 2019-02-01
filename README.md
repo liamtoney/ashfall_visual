@@ -60,7 +60,7 @@ Thompson, M. A., Lindsay, J. M., & Leonard, G. S. (2017). [More than meets the e
 </br>
 <p align="center">
   <a href="https://www.gns.cri.nz">
-    <img src="http://spacewardbound.astrobiology.kiwi/wp-content/uploads/2017/04/GNS_logo-1038x1709.png" height="70"></a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKWLxovJe1WHtgvBgX08YS7vcl8HcMg2tsGCm9v5YvcodG20m2" height="70"></a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="http://www.metservice.com/national/home">
     <img src="http://m.metservice.com/sites/all/themes/mobile/images-new/hi/MetService-hammerhead-logo.svg" height="40"></a>
