@@ -82,8 +82,8 @@ def grab_gshhg_features(scale, levels, extent):
 
     features = {'latitude':[], 'longitude':[]}
     for feature in unformatted_features:
-        lons = list(list(feature)[0].exterior.coords.xy[0])
-        lats = list(list(feature)[0].exterior.coords.xy[1])
+        lons = feature.exterior.coords.xy[0].tolist()
+        lats = feature.exterior.coords.xy[1].tolist()
         features['longitude'].append(lons)
         features['latitude'].append(lats)
 
