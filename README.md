@@ -1,4 +1,7 @@
 # Interactive visualization of ash deposition forecasts
+
+🚨 **This repository is no longer actively maintained.** 🚨
+
 ![](demonstration.gif "Demonstration of interactive ash deposition map")
 
 The spatial distribution, amount, and arrival time of deposited ash following a volcanic eruption are important parameters for hazard preparation and mitigation. In New Zealand, [GNS Science](https://www.gns.cri.nz/) has collaborated with [MetService](http://www.metservice.com/national/home) to modify [HYSPLIT](https://ready.arl.noaa.gov/HYSPLIT.php) &mdash; an airborne ash dispersion modeling program &mdash; for ash deposition forecasting. This repository illustrates the variety of ashfall forecast products that can be produced from the model output.
